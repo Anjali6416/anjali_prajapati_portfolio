@@ -6,14 +6,13 @@ import TechStacks from "../TechStacks/TechStacks";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import { Button } from "../Button/Button";
 import About from "../About/About";
 import { projects } from "../../Utils/Projects";
 import Contact from "../Contact/Contact";
 import { ThemeContext } from "../../ContextProvider/ThemeContext";
-import Experiences from "../Experiences/Experiences";
 import imageabc from "../../assets/anjimg.png"
 const Home = ({ scrollRef }) => {
+  
   const [projectArray, setProjectArray] = useState(projects.slice(0, 4));
   const { newTheme } = React.useContext(ThemeContext);
   const [offset, setOffset] = useState(0);
@@ -35,18 +34,8 @@ const Home = ({ scrollRef }) => {
     document.body.style.backgroundColor = newTheme.background;
   }, [newTheme]);
 
-  const handleButton = () => {};
-
   console.log(offset);
-  const handleShowMoreBtn = () => {
-    if (projects.length === projectArray.length) {
-      setProjectArray(projects.slice(0, 4));
-      window.scrollTo(0, location);
-    } else {
-      setProjectArray(projects);
-      setLocation(offset);
-    }
-  };
+  
 
   return (
     <div ref={scrollRef}>
@@ -101,7 +90,7 @@ const Home = ({ scrollRef }) => {
           }}
           className={styles.profileImage}
         >
-          <img src= {imageabc} />
+          <img src= {imageabc} alt='image' />
         </div>
       </div>
 

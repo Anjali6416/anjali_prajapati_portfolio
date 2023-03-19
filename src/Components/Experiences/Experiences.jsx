@@ -1,9 +1,7 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from '../../ContextProvider/ThemeContext';
+import React from 'react';
 import styles from './Experiences.module.css';
 
 const Experiences = () => {
-	const { newTheme } = useContext(ThemeContext);
 	return (
 		<div className="ab">
 			
